@@ -182,9 +182,9 @@ function M.attach(bufnr)
       M.highlight_usages(bufnr)
     end,
   }
-  api.nvim_create_autocmd({ 'CursorHold' }, highlighter_args)
+  api.nvim_create_autocmd({ 'CursorMoved' }, highlighter_args)
   if M.config.insert_mode then
-    api.nvim_create_autocmd({ 'CursorHoldI' }, highlighter_args)
+    api.nvim_create_autocmd({ 'CursorMovedI' }, highlighter_args)
   else
     api.nvim_create_autocmd({ 'InsertEnter' }, {
       group = au,
